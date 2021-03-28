@@ -2,11 +2,11 @@
   "dependencies": {
     "dayjs": "^1.10.4",
     "formik": "^2.2.6",
-    "graphql": "^15.5.0",
     "next": "^10.0.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-relay": "^11.0.1",
+    "relay-runtime": "^11.0.1",
     "yup": "^0.32.9"
   },
   "devDependencies": {
@@ -14,8 +14,17 @@
     "@types/react": "^17.0.3",
     "babel-plugin-relay": "^11.0.1",
     "get-graphql-schema": "^2.1.2",
+    "graphql": "^15.5.0",
     "relay-compiler": "^11.0.1",
     "relay-compiler-language-typescript": "^13.0.6",
+    "relay-config": "^11.0.1",
     "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "relay": "get-graphql-schema https://coqzo.herokuapp.com/graphql > schema.graphql && relay-compiler --src ./src/ --exclude '**/.next/**' '**/node_modules/**' '**/test/**'  '**/__generated__/**' --exclude '**/schema/**' --schema schema.graphql --language typescript --customScalars.ISO8601DateTime=String --artifactDirectory ./src/__generated__",
+    "schema": "get-graphql-schema https://coqzo.herokuapp.com/graphql > schema.graphql"
   }
 }
