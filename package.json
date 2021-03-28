@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "dayjs": "^1.10.4",
+    "formik": "^2.2.6",
+    "graphql": "^15.5.0",
+    "next": "^10.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-relay": "^11.0.1",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@types/react": "^17.0.3",
+    "babel-plugin-relay": "^11.0.1",
+    "get-graphql-schema": "^2.1.2",
+    "relay-compiler": "^11.0.1",
+    "relay-compiler-language-typescript": "^13.0.6",
+    "typescript": "^4.2.3"
+  }
+}

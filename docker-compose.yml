@@ -12,8 +12,8 @@ services:
     ports:
       - "8000:8000"
     image: next:latest
-    networks:
-      - coqzo_network
-networks:
-  coqzo_network:
-    external: true
+#     networks:
+#       - coqzo_network
+# networks:
+#   coqzo_network:
+#     external: true
