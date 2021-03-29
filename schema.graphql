@@ -353,6 +353,7 @@ input CreateWebsiteInput {
 type CreateWebsitePayload {
   """A unique identifier for the client performing the mutation."""
   clientMutationId: String
+  currentUser: User
   errors: [String!]!
   website: Website!
   websiteEdge: WebsiteEdge!
@@ -493,6 +494,7 @@ input DeleteWebsiteInput {
 type DeleteWebsitePayload {
   """A unique identifier for the client performing the mutation."""
   clientMutationId: String
+  currentUser: User
   deletedWebsiteId: ID!
   errors: [String!]!
   website: Website
@@ -563,47 +565,161 @@ input ImageAttributes {
 scalar ISO8601DateTime
 
 type Mutation {
-  createArticle(input: CreateArticleInput!): CreateArticlePayload
-  createArticleImage(input: CreateArticleImageInput!): CreateArticleImagePayload
-  createContent(input: CreateContentInput!): CreateContentPayload
-  createField(input: CreateFieldInput!): CreateFieldPayload
-  createSection(input: CreateSectionInput!): CreateSectionPayload
-  createSectionImage(input: CreateSectionImageInput!): CreateSectionImagePayload
-  createSignedUrl(input: CreateSignedUrlInput!): CreateSignedUrlPayload
-  createUser(input: CreateUserInput!): CreateUserPayload
-  createWebsite(input: CreateWebsiteInput!): CreateWebsitePayload
-  deleteArticle(input: DeleteArticleInput!): DeleteArticlePayload
-  deleteArticleImage(input: DeleteArticleImageInput!): DeleteArticleImagePayload
-  deleteContent(input: DeleteContentInput!): DeleteContentPayload
-  deleteField(input: DeleteFieldInput!): DeleteFieldPayload
-  deleteSection(input: DeleteSectionInput!): DeleteSectionPayload
-  deleteSectionImage(input: DeleteSectionImageInput!): DeleteSectionImagePayload
-  deleteUser(input: DeleteUserInput!): DeleteUserPayload
-  deleteWebsite(input: DeleteWebsiteInput!): DeleteWebsitePayload
-  refreshAdmin(input: RefreshAdminInput!): RefreshAdminPayload
-  refreshUser(input: RefreshUserInput!): RefreshUserPayload
-  refreshWebsite(input: RefreshWebsiteInput!): RefreshWebsitePayload
-  sendContact(input: SendContactInput!): SendContactPayload
-  signinAdmin(input: SigninAdminInput!): SigninAdminPayload
-  signinUser(input: SigninUserInput!): SigninUserPayload
-  signinWebsite(input: SigninWebsiteInput!): SigninWebsitePayload
+  createArticle(
+    """Parameters for CreateArticle"""
+    input: CreateArticleInput!
+  ): CreateArticlePayload
+  createArticleImage(
+    """Parameters for CreateArticleImage"""
+    input: CreateArticleImageInput!
+  ): CreateArticleImagePayload
+  createContent(
+    """Parameters for CreateContent"""
+    input: CreateContentInput!
+  ): CreateContentPayload
+  createField(
+    """Parameters for CreateField"""
+    input: CreateFieldInput!
+  ): CreateFieldPayload
+  createSection(
+    """Parameters for CreateSection"""
+    input: CreateSectionInput!
+  ): CreateSectionPayload
+  createSectionImage(
+    """Parameters for CreateSectionImage"""
+    input: CreateSectionImageInput!
+  ): CreateSectionImagePayload
+  createSignedUrl(
+    """Parameters for CreateSignedUrl"""
+    input: CreateSignedUrlInput!
+  ): CreateSignedUrlPayload
+  createUser(
+    """Parameters for CreateUser"""
+    input: CreateUserInput!
+  ): CreateUserPayload
+  createWebsite(
+    """Parameters for CreateWebsite"""
+    input: CreateWebsiteInput!
+  ): CreateWebsitePayload
+  deleteArticle(
+    """Parameters for DeleteArticle"""
+    input: DeleteArticleInput!
+  ): DeleteArticlePayload
+  deleteArticleImage(
+    """Parameters for DeleteArticleImage"""
+    input: DeleteArticleImageInput!
+  ): DeleteArticleImagePayload
+  deleteContent(
+    """Parameters for DeleteContent"""
+    input: DeleteContentInput!
+  ): DeleteContentPayload
+  deleteField(
+    """Parameters for DeleteField"""
+    input: DeleteFieldInput!
+  ): DeleteFieldPayload
+  deleteSection(
+    """Parameters for DeleteSection"""
+    input: DeleteSectionInput!
+  ): DeleteSectionPayload
+  deleteSectionImage(
+    """Parameters for DeleteSectionImage"""
+    input: DeleteSectionImageInput!
+  ): DeleteSectionImagePayload
+  deleteUser(
+    """Parameters for DeleteUser"""
+    input: DeleteUserInput!
+  ): DeleteUserPayload
+  deleteWebsite(
+    """Parameters for DeleteWebsite"""
+    input: DeleteWebsiteInput!
+  ): DeleteWebsitePayload
+  refreshAdmin(
+    """Parameters for RefreshAdmin"""
+    input: RefreshAdminInput!
+  ): RefreshAdminPayload
+  refreshUser(
+    """Parameters for RefreshUser"""
+    input: RefreshUserInput!
+  ): RefreshUserPayload
+  refreshWebsite(
+    """Parameters for RefreshWebsite"""
+    input: RefreshWebsiteInput!
+  ): RefreshWebsitePayload
+  sendContact(
+    """Parameters for SendContact"""
+    input: SendContactInput!
+  ): SendContactPayload
+  signinAdmin(
+    """Parameters for SigninAdmin"""
+    input: SigninAdminInput!
+  ): SigninAdminPayload
+  signinUser(
+    """Parameters for SigninUser"""
+    input: SigninUserInput!
+  ): SigninUserPayload
+  signinWebsite(
+    """Parameters for SigninWebsite"""
+    input: SigninWebsiteInput!
+  ): SigninWebsitePayload
 
   """An example field added by the generator"""
   testField: String!
-  updateArticle(input: UpdateArticleInput!): UpdateArticlePayload
-  updateArticleImage(input: UpdateArticleImageInput!): UpdateArticleImagePayload
-  updateArticleImagePosition(input: UpdateArticleImagePositionInput!): UpdateArticleImagePositionPayload
-  updateArticlePosition(input: UpdateArticlePositionInput!): UpdateArticlePositionPayload
-  updateContent(input: UpdateContentInput!): UpdateContentPayload
-  updateContentPosition(input: UpdateContentPositionInput!): UpdateContentPositionPayload
-  updateField(input: UpdateFieldInput!): UpdateFieldPayload
-  updateFieldPosition(input: UpdateFieldPositionInput!): UpdateFieldPositionPayload
-  updateSection(input: UpdateSectionInput!): UpdateSectionPayload
-  updateSectionImage(input: UpdateSectionImageInput!): UpdateSectionImagePayload
-  updateSectionImagePosition(input: UpdateSectionImagePositionInput!): UpdateSectionImagePositionPayload
-  updateSectionPosition(input: UpdateSectionPositionInput!): UpdateSectionPositionPayload
-  updateUser(input: UpdateUserInput!): UpdateUserPayload
-  updateWebsite(input: UpdateWebsiteInput!): UpdateWebsitePayload
+  updateArticle(
+    """Parameters for UpdateArticle"""
+    input: UpdateArticleInput!
+  ): UpdateArticlePayload
+  updateArticleImage(
+    """Parameters for UpdateArticleImage"""
+    input: UpdateArticleImageInput!
+  ): UpdateArticleImagePayload
+  updateArticleImagePosition(
+    """Parameters for UpdateArticleImagePosition"""
+    input: UpdateArticleImagePositionInput!
+  ): UpdateArticleImagePositionPayload
+  updateArticlePosition(
+    """Parameters for UpdateArticlePosition"""
+    input: UpdateArticlePositionInput!
+  ): UpdateArticlePositionPayload
+  updateContent(
+    """Parameters for UpdateContent"""
+    input: UpdateContentInput!
+  ): UpdateContentPayload
+  updateContentPosition(
+    """Parameters for UpdateContentPosition"""
+    input: UpdateContentPositionInput!
+  ): UpdateContentPositionPayload
+  updateField(
+    """Parameters for UpdateField"""
+    input: UpdateFieldInput!
+  ): UpdateFieldPayload
+  updateFieldPosition(
+    """Parameters for UpdateFieldPosition"""
+    input: UpdateFieldPositionInput!
+  ): UpdateFieldPositionPayload
+  updateSection(
+    """Parameters for UpdateSection"""
+    input: UpdateSectionInput!
+  ): UpdateSectionPayload
+  updateSectionImage(
+    """Parameters for UpdateSectionImage"""
+    input: UpdateSectionImageInput!
+  ): UpdateSectionImagePayload
+  updateSectionImagePosition(
+    """Parameters for UpdateSectionImagePosition"""
+    input: UpdateSectionImagePositionInput!
+  ): UpdateSectionImagePositionPayload
+  updateSectionPosition(
+    """Parameters for UpdateSectionPosition"""
+    input: UpdateSectionPositionInput!
+  ): UpdateSectionPositionPayload
+  updateUser(
+    """Parameters for UpdateUser"""
+    input: UpdateUserInput!
+  ): UpdateUserPayload
+  updateWebsite(
+    """Parameters for UpdateWebsite"""
+    input: UpdateWebsiteInput!
+  ): UpdateWebsitePayload
 }
 
 """Information about pagination in a connection."""
@@ -868,7 +984,7 @@ type SigninAdminPayload {
 
 """Autogenerated input type of SigninUser"""
 input SigninUserInput {
-  name: String!
+  username: String!
   password: String!
 
   """A unique identifier for the client performing the mutation."""
@@ -1198,6 +1314,25 @@ type User {
   telephone: String
   updatedAt: ISO8601DateTime!
   websiteCount: Int!
+  websites(
+    filter: WebsiteFilter
+
+    """Returns the first _n_ elements from the list."""
+    first: Int
+    skip: Int
+    orderBy: String
+
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+
+    """Returns the last _n_ elements from the list."""
+    last: Int
+  ): WebsiteConnection!
 }
 
 """The connection type for User."""
