@@ -7,8 +7,8 @@ import {
   usePreloadedQuery,
 } from 'react-relay/hooks';
 import RelayEnvironment from '../lib/RelayEnvironment';
-import React from 'react'
-const { Suspense } = React;
+// import React from 'react'
+// const { Suspense } = React;
 
 
 
@@ -21,10 +21,10 @@ export default function App({ Component, pageProps }) {
   // );
   return (
     <RelayEnvironmentProvider environment={RelayEnvironment}>
-      <Suspense fallback={'Loading...'}>
+      {/* <Suspense fallback={'Loading...'}> */}
         <Component {...pageProps} />
         {/* <App preloadedQuery={preloadedQuery} /> */}
-      </Suspense>
+      {/* </Suspense> */}
       
     </RelayEnvironmentProvider>
   )

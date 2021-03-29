@@ -20,12 +20,14 @@ import RelayEnvironment from '../lib/RelayEnvironment';
 // console.log(preloadedQuery)
 
 const IndexPage: NextPage = (props) => {
-  console.log(props)
+  // console.log(props)
   const data = usePreloadedQuery(IndexPage_indexQuery, props)
-  console.log(data)
+  console.log(data.publicWebsite.id)
   return (
     <>
-      test
+      <div>
+        {data?.publicWebsite?.id}
+        </div>
       <style jsx>{`
 
       `}</style>
