@@ -10,11 +10,15 @@ const WorkListItem: React.FC<Props> = (props) => {
     <>
       <li>
         <div className="box">
+          <img src={`${process.env.NEXT_PUBLIC_IMAGE_HOST}${props.article.pcImage}`} />
           <h5>{props.article.subject}</h5>
           <p>{props.article.description}</p>
         </div>
       </li>
       <style jsx>{`
+        img {
+          width: 100%;
+        }
         p {
           white-space: pre-wrap;
         }

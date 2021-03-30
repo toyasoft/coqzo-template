@@ -11,7 +11,7 @@ const WorkList: React.FC<Props> = (props) => {
     <>
       <section>
         <div>
-          <h3>テストデータ</h3>
+          <h3>レシピデータ</h3>
 
           {props.query.works && props.query.works.edges.length > 0 ? (
             <ul>

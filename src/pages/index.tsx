@@ -10,7 +10,7 @@ const IndexPage: NextPage = (props) => {
   return (
     <div>
       <header>
-        <h1>COQZOテンプレート</h1>
+        <h1>マヨポテキッチン</h1>
       </header>
       <WorkList query={props} />
     </div>
@@ -27,7 +27,7 @@ export async function getStaticProps() {
       skip: 0,
       orderBy: "position_ASC",
       workFilter: {
-        contentNameEquals: "work",
+        contentNameEquals: "recipe",
       },
     });
   } catch (err) {
